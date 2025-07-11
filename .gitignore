@@ -263,3 +263,5 @@ public
 # Temporary folders
 tmp/
 temp/
+
+.ruff_cache/

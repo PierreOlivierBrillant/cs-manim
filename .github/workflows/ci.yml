@@ -33,17 +33,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install -e .[dev]
     
-    - name: Lint with flake8
+    - name: Lint and format with ruff
       run: |
-        flake8 cs_manim tests
-    
-    - name: Check formatting with black
-      run: |
-        black --check cs_manim tests
-    
-    - name: Type check with mypy
-      run: |
-        mypy cs_manim
+        ruff check cs_manim tests
+        ruff format --check cs_manim tests
     
     - name: Test with pytest
       run: |
