@@ -1,4 +1,4 @@
-from manim import BLUE, GREEN, YELLOW, ORANGE
+from manim import BLUE, GREEN, ORANGE, YELLOW
 
 CLIENT_COLOR = BLUE
 SERVER_COLOR = GREEN

@@ -1,10 +1,10 @@
 # CS-Manim
 
-Animations vidéo avec Manim pour expliquer les concepts techniques liés à l'informatique.
+Video animations with Manim to explain technical concepts related to computer science.
 
 ## Description
 
-CS-Manim est une librairie Python qui fournit des objets et des styles réutilisables pour créer des animations éducatives avec Manim, spécialement conçue pour expliquer des concepts d'informatique et de programmation.
+CS-Manim is a Python library that provides reusable objects and styles to create educational animations with Manim, specially designed to explain computer science and programming concepts.
 
 ## Installation
 
@@ -12,7 +12,7 @@ CS-Manim est une librairie Python qui fournit des objets et des styles réutilis
 pip install cs-manim
 ```
 
-## Utilisation
+## Usage
 
 ```python
 from manim import *
@@ -21,12 +21,12 @@ from cs_manim import CLIENT_COLOR, SERVER_COLOR, FONT_NAME
 
 class MyScene(Scene):
     def construct(self):
-        # Créer des objets pour vos animations
+        # Create objects for your animations
         computer = Computer("PC Client")
         server = Server("API Server")
         mobile = MobilePhone("Smartphone")
 
-        # Positionner et animer
+        # Position and animate
         computer.shift(LEFT * 3)
         server.shift(RIGHT * 3)
 
@@ -34,129 +34,129 @@ class MyScene(Scene):
         self.play(Create(server))
 ```
 
-## Fonctionnalités
+## Features
 
-- **Objets réutilisables** : Ordinateurs, serveurs, téléphones portables
-- **Styles cohérents** : Couleurs et polices prédéfinies
-- **Compatible Manim** : Utilise Manim 0.19.0+
-- **Facile à utiliser** : Import simple et API intuitive
+- **Reusable objects**: Computers, servers, mobile phones
+- **Consistent styles**: Predefined colors and fonts
+- **Manim compatible**: Uses Manim 0.19.0+
+- **Easy to use**: Simple import and intuitive API
 
-## Objets disponibles
+## Available Objects
 
 ### Computer
 
 ```python
-computer = Computer(name="Mon PC", color=CLIENT_COLOR)
+computer = Computer(name="My PC", color=CLIENT_COLOR)
 ```
 
 ### Server
 
 ```python
-server = Server(name="Mon Serveur", color=SERVER_COLOR)
+server = Server(name="My Server", color=SERVER_COLOR)
 ```
 
 ### MobilePhone
 
 ```python
-mobile = MobilePhone(name="Mon Téléphone", color=PURPLE)
+mobile = MobilePhone(name="My Phone", color=PURPLE)
 ```
 
-## Styles disponibles
+## Available Styles
 
-- `CLIENT_COLOR` : Couleur par défaut pour les clients (BLUE)
-- `SERVER_COLOR` : Couleur par défaut pour les serveurs (GREEN)
-- `REQUEST_COLOR` : Couleur pour les requêtes (YELLOW)
-- `RESPONSE_COLOR` : Couleur pour les réponses (ORANGE)
-- `FONT_NAME` : Police par défaut ("Inconsolata")
+- `CLIENT_COLOR`: Default color for clients (BLUE)
+- `SERVER_COLOR`: Default color for servers (GREEN)
+- `REQUEST_COLOR`: Color for requests (YELLOW)
+- `RESPONSE_COLOR`: Color for responses (ORANGE)
+- `FONT_NAME`: Default font ("Inconsolata")
 
-## Développement
+## Development
 
-### Configuration de l'environnement
+### Environment Setup
 
 ```bash
-# Cloner le dépôt
+# Clone the repository
 git clone https://github.com/PierreOlivierBrillant/cs-manim.git
 cd cs-manim
 
-# Créer un environnement virtuel
+# Create a virtual environment
 python -m venv .venv
 source .venv/bin/activate  # Linux/Mac
-# ou .venv\Scripts\activate  # Windows
+# or .venv\Scripts\activate  # Windows
 
-# Installer en mode développement
+# Install in development mode
 pip install -e .[dev]
 ```
 
 ### Tests
 
 ```bash
-# Exécuter les tests
+# Run tests
 pytest
 
-# Avec couverture
+# With coverage
 pytest --cov=cs_manim
 ```
 
-### Formatage et linting
+### Formatting and linting
 
 ```bash
-# Formater le code
+# Format the code
 black cs_manim tests examples
 
-# Vérifier le style
-flake8 cs_manim tests examples
+# Check style
+ruff cs_manim tests examples
 
-# Vérifier les types
+# Check types
 mypy cs_manim
 ```
 
-### Construction du package
+### Package building
 
 ```bash
-# Construire le package
+# Build the package
 python -m build
 
-# Vérifier le package
+# Check the package
 twine check dist/*
 ```
 
-## Publication
+## Publishing
 
-### Prérequis pour la publication
+### Prerequisites for publishing
 
-1. Compte PyPI (https://pypi.org/)
-2. Token d'API PyPI configuré
-3. Toutes les vérifications passées
+1. PyPI account (https://pypi.org/)
+2. PyPI API token configured
+3. All checks passed
 
-### Étapes de publication
+### Publishing steps
 
-1. **Mettre à jour la version** dans `pyproject.toml`
-2. **Mettre à jour le CHANGELOG.md**
-3. **Créer un tag git** : `git tag v0.1.0`
-4. **Pousser le tag** : `git push origin v0.1.0`
-5. **Créer une release sur GitHub**
+1. **Update version** in `pyproject.toml`
+2. **Update CHANGELOG.md**
+3. **Create git tag**: `git tag v0.1.0`
+4. **Push the tag**: `git push origin v0.1.0`
+5. **Create release on GitHub**
 
-La publication sur PyPI se fait automatiquement via GitHub Actions lors de la création d'une release.
+Publishing to PyPI happens automatically via GitHub Actions when creating a release.
 
-### Publication manuelle
+### Manual publishing
 
 ```bash
-# Construire le package
+# Build the package
 python -m build
 
-# Publier sur PyPI
+# Publish to PyPI
 twine upload dist/*
 ```
 
-## Exemples
+## Examples
 
-Voir le dossier `examples/` pour des exemples d'utilisation.
+See the `examples/` folder for usage examples.
 
-## Contribuer
+## Contributing
 
-Voir [CONTRIBUTING.md](CONTRIBUTING.md) pour les instructions de contribution.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution instructions.
 
-## Dépendances
+## Dependencies
 
 - Python >= 3.10
 - Manim >= 0.19.0
@@ -164,16 +164,16 @@ Voir [CONTRIBUTING.md](CONTRIBUTING.md) pour les instructions de contribution.
 - NumPy >= 1.24.0
 - SciPy >= 1.10.0
 
-## Licence
+## License
 
-MIT License - voir le fichier [LICENSE](LICENSE) pour plus de détails.
+MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Auteur
+## Author
 
 Pierre-Olivier Brillant - pierreolivierbrillant@gmail.com
 
-## Liens
+## Links
 
 - [GitHub](https://github.com/PierreOlivierBrillant/cs-manim)
 - [PyPI](https://pypi.org/project/cs-manim/)
-- [Documentation Manim](https://docs.manim.community/)
+- [Manim Documentation](https://docs.manim.community/)

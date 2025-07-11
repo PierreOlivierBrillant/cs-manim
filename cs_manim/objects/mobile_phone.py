@@ -1,19 +1,19 @@
-from manim import VGroup, RoundedRectangle, Rectangle, Text, DOWN, PURPLE
+from manim import DOWN, PURPLE, Rectangle, RoundedRectangle, Text, VGroup
+
 from ..style import FONT_NAME
 
 
 class MobilePhone(VGroup):
-
     def __init__(self, name="Mobile", color=PURPLE):
         """
-        Crée un téléphone mobile
+        Create a mobile phone
 
         Args:
-            name: Nom du téléphone (par défaut "Mobile")
-            color: Couleur du téléphone (par défaut PURPLE)
+            name: Name of the phone (default "Mobile")
+            color: Color of the phone (default PURPLE)
 
         Returns:
-            VGroup: Le groupe d'objets représentant le téléphone mobile
+            VGroup: The group of objects representing the mobile phone
         """
         return super().__init__(
             RoundedRectangle(

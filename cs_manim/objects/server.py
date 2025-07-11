@@ -1,39 +1,28 @@
-from manim import (
-    VGroup,
-    Rectangle,
-    Circle,
-    Text,
-    UP,
-    LEFT,
-    DOWN,
-    RED,
-    GREEN,
-    YELLOW,
-)
+from manim import DOWN, GREEN, LEFT, RED, UP, YELLOW, Circle, Rectangle, Text, VGroup
+
 from ..style import FONT_NAME, SERVER_COLOR
 
 
 class Server(VGroup):
-
     def __init__(
         self,
         name="Server",
         color=SERVER_COLOR,
     ):
         """
-        Crée un serveur
+        Create a server
 
         Args:
-            name: Nom du serveur (par défaut "Serveur")
-            color: Couleur du serveur (par défaut GREEN)
+            name: Name of the server (default "Server")
+            color: Color of the server (default GREEN)
 
         Returns:
-            VGroup: Le groupe d'objets représentant le serveur
+            VGroup: The group of objects representing the server
         """
         return super().__init__(
-            # Boîtier principal
+            # Main case
             Rectangle(width=1.0, height=1.4, color=color, fill_opacity=0.3),
-            # Rack supérieur
+            # Top rack
             Rectangle(width=0.8, height=0.3, color=color, fill_opacity=0.1).shift(
                 UP * 0.4
             ),
@@ -41,11 +30,11 @@ class Server(VGroup):
             Circle(radius=0.02, color=GREEN, fill_opacity=1).shift(
                 UP * 0.4 + LEFT * 0.2
             ),
-            # Rack milieu
+            # Middle rack
             Rectangle(width=0.8, height=0.3, color=color, fill_opacity=0.1),
             Circle(radius=0.02, color=GREEN, fill_opacity=1).shift(LEFT * 0.3),
             Circle(radius=0.02, color=GREEN, fill_opacity=1).shift(LEFT * 0.2),
-            # Rack inférieur
+            # Bottom rack
             Rectangle(width=0.8, height=0.3, color=color, fill_opacity=0.1).shift(
                 DOWN * 0.4
             ),
@@ -55,6 +44,6 @@ class Server(VGroup):
             Circle(radius=0.02, color=GREEN, fill_opacity=1).shift(
                 DOWN * 0.4 + LEFT * 0.2
             ),
-            # Nom du serveur
+            # Server name
             Text(name, font_size=14, color=color, font=FONT_NAME).shift(DOWN * 0.9),
         )

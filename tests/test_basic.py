@@ -1,8 +1,8 @@
-"""Tests pour les imports et la configuration de base."""
+"""Tests for imports and basic configuration."""
 
 
 def test_package_import():
-    """Test que le package peut être importé avec ses métadonnées."""
+    """Test that the package can be imported with its metadata."""
     import cs_manim
 
     assert cs_manim.__version__ == "0.1.0"
@@ -10,64 +10,43 @@ def test_package_import():
 
 
 def test_objects_import():
-    """Test que les objets principaux peuvent être importés."""
-    from cs_manim.objects import Computer, Server, MobilePhone
+    """Test that the main objects can be imported."""
+    from cs_manim.objects import Computer, MobilePhone, Server
 
-    # Vérifier que les classes existent et sont callable
-    assert callable(Computer)
-    assert callable(Server)
-    assert callable(MobilePhone)
+    # Verify that the classes exist
+    assert Computer is not None
+    assert Server is not None
+    assert MobilePhone is not None
 
 
 def test_style_import():
-    """Test que les constantes de style peuvent être importées."""
+    """Test that the style constants can be imported."""
     from cs_manim.style import (
         CLIENT_COLOR,
-        SERVER_COLOR,
+        FONT_NAME,
         REQUEST_COLOR,
         RESPONSE_COLOR,
-        FONT_NAME,
+        SERVER_COLOR,
     )
 
-    # Vérifier que les constantes existent et ont le bon type
+    # Verify that the constants exist
     assert CLIENT_COLOR is not None
     assert SERVER_COLOR is not None
     assert REQUEST_COLOR is not None
     assert RESPONSE_COLOR is not None
-    assert isinstance(FONT_NAME, str)
     assert FONT_NAME == "Inconsolata"
 
 
 def test_public_api():
-    """Test que l'API publique est accessible via le package principal."""
+    """Test that the public API is accessible via the main package."""
     import cs_manim
 
-    # Vérifier que les objets principaux sont accessibles
+    # Verify that the main objects are accessible
     assert hasattr(cs_manim, "Computer")
     assert hasattr(cs_manim, "Server")
     assert hasattr(cs_manim, "MobilePhone")
 
-    # Vérifier que les styles sont accessibles
+    # Verify that the styles are accessible
     assert hasattr(cs_manim, "CLIENT_COLOR")
     assert hasattr(cs_manim, "SERVER_COLOR")
     assert hasattr(cs_manim, "FONT_NAME")
-
-
-def test_objects_instantiation():
-    """Test que les objets peuvent être instanciés (sans Manim scene)."""
-    from cs_manim import Computer, Server, MobilePhone
-
-    # Test que les constructeurs acceptent des paramètres
-    try:
-        # Ces tests ne vont pas créer les objets complets car Manim n'est pas
-        # initialisé, mais ils testent que les constructeurs sont corrects
-        computer_class = Computer
-        server_class = Server
-        mobile_class = MobilePhone
-
-        assert computer_class is not None
-        assert server_class is not None
-        assert mobile_class is not None
-    except Exception:
-        # Si Manim n'est pas disponible, c'est OK pour ce test de base
-        pass

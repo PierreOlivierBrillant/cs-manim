@@ -1,7 +1,7 @@
-"""Objets réutilisés dans les scènes"""
+"""Reusable objects for scenes"""
 
 from .computer import Computer
-from .server import Server
 from .mobile_phone import MobilePhone
+from .server import Server
 
 __all__ = ["Computer", "Server", "MobilePhone"]

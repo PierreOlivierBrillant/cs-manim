@@ -1,16 +1,16 @@
-from manim import VGroup, Rectangle, Text, UP, DOWN
-from ..style import FONT_NAME, CLIENT_COLOR
+from manim import DOWN, UP, Rectangle, Text, VGroup
+
+from ..style import CLIENT_COLOR, FONT_NAME
 
 
 class Computer(VGroup):
-
     def __init__(self, name="Computer", color=CLIENT_COLOR):
         """
-        Crée un Ordinateur
+        Create a Computer
 
         Args:
-            name: Nom de l'ordinateur
-            color: Couleur du client (par défaut BLUE)
+            name: Name of the computer
+            color: Color of the client (default BLUE)
         """
         super().__init__(
             Rectangle(width=2, height=1.2, color=color, fill_opacity=0.3),
