@@ -11,10 +11,18 @@ def test_package_import():
 
 def test_objects_import():
     """Test that the main objects can be imported."""
-    from cs_manim.objects import Computer, MobilePhone, Server
+    from cs_manim.objects import (
+        AndroidLogo,
+        AppleLogo,
+        MobilePhone,
+        PortableComputer,
+        Server,
+    )
 
     # Verify that the classes exist
-    assert Computer is not None
+    assert AndroidLogo is not None
+    assert AppleLogo is not None
+    assert PortableComputer is not None
     assert Server is not None
     assert MobilePhone is not None
 
@@ -42,7 +50,9 @@ def test_public_api():
     import cs_manim
 
     # Verify that the main objects are accessible
-    assert hasattr(cs_manim, "Computer")
+    assert hasattr(cs_manim, "AndroidLogo")
+    assert hasattr(cs_manim, "AppleLogo")
+    assert hasattr(cs_manim, "PortableComputer")
     assert hasattr(cs_manim, "Server")
     assert hasattr(cs_manim, "MobilePhone")
 

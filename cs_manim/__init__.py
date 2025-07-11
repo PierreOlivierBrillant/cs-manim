@@ -7,7 +7,7 @@ educational animations with Manim, specially designed to explain
 computer science concepts.
 """
 
-from .objects import Computer, MobilePhone, Server
+from .objects import AndroidLogo, AppleLogo, MobilePhone, PortableComputer, Server
 from .style import CLIENT_COLOR, FONT_NAME, REQUEST_COLOR, RESPONSE_COLOR, SERVER_COLOR
 
 __version__ = "0.1.0"
@@ -15,7 +15,9 @@ __author__ = "Pierre-Olivier Brillant"
 __email__ = "pierreolivierbrillant@gmail.com"
 
 __all__ = [
-    "Computer",
+    "AndroidLogo",
+    "AppleLogo",
+    "PortableComputer",
     "Server",
     "MobilePhone",
     "CLIENT_COLOR",
