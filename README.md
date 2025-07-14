@@ -43,10 +43,10 @@ class MyScene(Scene):
 
 ## Available Objects
 
-### Computer
+### PortableComputer
 
 ```python
-computer = Computer(name="My PC", color=CLIENT_COLOR)
+computer = PortableComputer(name="My PC", color=CLIENT_COLOR)
 ```
 
 ### Server
@@ -61,13 +61,41 @@ server = Server(name="My Server", color=SERVER_COLOR)
 mobile = MobilePhone(name="My Phone", color=PURPLE)
 ```
 
-## Available Styles
+### AndroidLogo
 
-- `CLIENT_COLOR`: Default color for clients (BLUE)
-- `SERVER_COLOR`: Default color for servers (GREEN)
-- `REQUEST_COLOR`: Color for requests (YELLOW)
-- `RESPONSE_COLOR`: Color for responses (ORANGE)
-- `FONT_NAME`: Default font ("Inconsolata")
+```python
+android = AndroidLogo(color=GREEN)
+```
+
+### AppleLogo
+
+```python
+apple = AppleLogo(color=WHITE)
+```
+
+### Database
+
+```python
+database = Database(name="My Database", color=BLUE)
+```
+
+### Cloud
+
+```python
+cloud = Cloud(name="My Cloud", color=GRAY)
+```
+
+### Monitor
+
+```python
+monitor = Monitor(name="My Monitor", color=BLACK)
+```
+
+### TestTube
+
+```python
+test_tube = TestTube(color=RED)
+```
 
 ## Development
 
