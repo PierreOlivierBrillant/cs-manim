@@ -17,7 +17,6 @@ class Cloud(VGroup):
         Returns:
             VGroup: The group of objects representing the cloud
         """
-        # Créer un fond blanc avec la même forme
         cloud = (
             SVGMobject("cs_manim/svg/cloud.svg")
             .set_fill(color, opacity=0.3)

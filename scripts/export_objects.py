@@ -27,6 +27,7 @@ from cs_manim import (  # noqa: E402
     AppleLogo,
     Cloud,
     MobilePhone,
+    Monitor,
     PortableComputer,
     Server,
 )
@@ -125,6 +126,7 @@ def create_objects():
         (AndroidLogo(), "android_logo"),
         (AppleLogo(), "apple_logo"),
         (Cloud(), "cloud"),
+        (Monitor(), "monitor"),
         (PortableComputer(), "portable_computer"),
         (Server(), "server"),
         (MobilePhone(), "mobile_phone"),

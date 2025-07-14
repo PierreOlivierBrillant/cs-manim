@@ -34,10 +34,16 @@ Le script génère automatiquement une image pour chaque objet :
 
 #### Appareils
 
-- Ordinateur
+- Écran/Monitor
+- Ordinateur portable
 - Serveurs
 - Téléphone mobile
 
 #### Logos
 
 - Logo Android
+- Logo Apple
+
+#### Infrastructure
+
+- Cloud

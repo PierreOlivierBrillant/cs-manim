@@ -12,6 +12,7 @@ from .objects import (
     AppleLogo,
     Cloud,
     MobilePhone,
+    Monitor,
     PortableComputer,
     Server,
 )
@@ -25,6 +26,7 @@ __all__ = [
     "AndroidLogo",
     "AppleLogo",
     "Cloud",
+    "Monitor",
     "PortableComputer",
     "Server",
     "MobilePhone",

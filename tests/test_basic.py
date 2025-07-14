@@ -15,6 +15,7 @@ def test_objects_import():
         AndroidLogo,
         AppleLogo,
         MobilePhone,
+        Monitor,
         PortableComputer,
         Server,
     )
@@ -22,6 +23,7 @@ def test_objects_import():
     # Verify that the classes exist
     assert AndroidLogo is not None
     assert AppleLogo is not None
+    assert Monitor is not None
     assert PortableComputer is not None
     assert Server is not None
     assert MobilePhone is not None
@@ -52,6 +54,7 @@ def test_public_api():
     # Verify that the main objects are accessible
     assert hasattr(cs_manim, "AndroidLogo")
     assert hasattr(cs_manim, "AppleLogo")
+    assert hasattr(cs_manim, "Monitor")
     assert hasattr(cs_manim, "PortableComputer")
     assert hasattr(cs_manim, "Server")
     assert hasattr(cs_manim, "MobilePhone")
