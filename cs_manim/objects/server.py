@@ -1,13 +1,13 @@
-from manim import DOWN, LEFT, RIGHT, UP, Circle, Rectangle, Text, VGroup
+from manim import BLUE, DOWN, LEFT, RIGHT, UP, Circle, Rectangle, Text, VGroup
 
-from ..style import FONT_NAME, SERVER_COLOR
+from ..style import FONT_NAME
 
 
 class Server(VGroup):
     def __init__(
         self,
         name="Server",
-        color=SERVER_COLOR,
+        color=BLUE,
     ):
         """
         Create a server

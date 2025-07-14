@@ -1,49 +1,50 @@
 # Scripts
 
-Ce dossier contient des scripts utilitaires pour le projet CS-Manim.
+This folder contains utility scripts for the CS-Manim project.
 
 ## export_objects.py
 
-Exporter tous les objets CS-Manim en images.
+Export all CS-Manim objects as images.
 
-### Utilisation
+### Usage
 
 ```bash
-# Export basique (PNG, qualité élevée, dossier output)
+# Basic export (PNG, high quality, output folder)
 python scripts/export_objects.py
 
-# Spécifier le dossier de sortie
-python scripts/export_objects.py --output-dir mon_dossier
+# Specify output folder
+python scripts/export_objects.py --output-dir my_folder
 
-# Changer le format et la qualité
+# Change format and quality
 python scripts/export_objects.py --format svg --quality production
 
-# Aide
+# Help
 python scripts/export_objects.py --help
 ```
 
 ### Options
 
-- `--output-dir` : Dossier de sortie (défaut: `output`)
-- `--format` : Format d'image (`png` ou `svg`, défaut: `png`)
-- `--quality` : Qualité de rendu (`low`, `medium`, `high`, `production`, défaut: `high`)
+- `--output-dir` : Output folder (default: `output`)
+- `--format` : Image format (`png` or `svg`, default: `png`)
+- `--quality` : Render quality (`low`, `medium`, `high`, `production`, default: `high`)
 
-### Objets exportés
+### Exported objects
 
-Le script génère automatiquement une image pour chaque objet :
+The script automatically generates an image for each object:
 
-#### Appareils
+#### Devices
 
-- Écran/Monitor
-- Ordinateur portable
-- Serveurs
-- Téléphone mobile
-
-#### Logos
-
-- Logo Android
-- Logo Apple
+- Monitor/Screen
+- Portable computer
+- Mobile phone
 
 #### Infrastructure
 
+- Servers
+- Database
 - Cloud
+
+#### Logos
+
+- Android Logo
+- Apple Logo
