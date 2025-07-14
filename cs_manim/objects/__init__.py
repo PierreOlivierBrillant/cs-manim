@@ -8,6 +8,7 @@ from .mobile_phone import MobilePhone
 from .monitor import Monitor
 from .portable_computer import PortableComputer
 from .server import Server
+from .test_tube import TestTube
 
 __all__ = [
     "AndroidLogo",
@@ -18,4 +19,5 @@ __all__ = [
     "PortableComputer",
     "Server",
     "MobilePhone",
+    "TestTube",
 ]

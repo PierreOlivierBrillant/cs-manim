@@ -16,6 +16,7 @@ from .objects import (
     Monitor,
     PortableComputer,
     Server,
+    TestTube,
 )
 from .style import CLIENT_COLOR, FONT_NAME, REQUEST_COLOR, RESPONSE_COLOR, SERVER_COLOR
 
@@ -32,6 +33,7 @@ __all__ = [
     "PortableComputer",
     "Server",
     "MobilePhone",
+    "TestTube",
     "CLIENT_COLOR",
     "SERVER_COLOR",
     "REQUEST_COLOR",

@@ -19,6 +19,7 @@ def test_objects_import():
         Monitor,
         PortableComputer,
         Server,
+        TestTube,
     )
 
     # Verify that the classes exist
@@ -29,6 +30,7 @@ def test_objects_import():
     assert PortableComputer is not None
     assert Server is not None
     assert MobilePhone is not None
+    assert TestTube is not None
 
 
 def test_style_import():
@@ -61,6 +63,7 @@ def test_public_api():
     assert hasattr(cs_manim, "PortableComputer")
     assert hasattr(cs_manim, "Server")
     assert hasattr(cs_manim, "MobilePhone")
+    assert hasattr(cs_manim, "TestTube")
 
     # Verify that the styles are accessible
     assert hasattr(cs_manim, "CLIENT_COLOR")

@@ -31,6 +31,7 @@ from cs_manim import (  # noqa: E402
     Monitor,
     PortableComputer,
     Server,
+    TestTube,
 )
 
 
@@ -132,6 +133,7 @@ def create_objects():
         (PortableComputer(), "portable_computer"),
         (Server(), "server"),
         (MobilePhone(), "mobile_phone"),
+        (TestTube(), "test_tube"),
     ]
 
     return objects
