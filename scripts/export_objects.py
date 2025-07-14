@@ -25,6 +25,7 @@ sys.path.insert(0, str(project_root))
 from cs_manim import (  # noqa: E402
     AndroidLogo,
     AppleLogo,
+    Cloud,
     MobilePhone,
     PortableComputer,
     Server,
@@ -123,6 +124,7 @@ def create_objects():
     objects = [
         (AndroidLogo(), "android_logo"),
         (AppleLogo(), "apple_logo"),
+        (Cloud(), "cloud"),
         (PortableComputer(), "portable_computer"),
         (Server(), "server"),
         (MobilePhone(), "mobile_phone"),
