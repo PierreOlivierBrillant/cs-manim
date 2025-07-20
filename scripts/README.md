@@ -44,6 +44,10 @@ The script automatically generates an image for each object:
 - Database
 - Cloud
 
+#### Network
+
+- HTTP Call
+
 #### Testing
 
 - Test Tube
