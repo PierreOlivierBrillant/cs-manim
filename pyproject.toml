@@ -57,6 +57,9 @@ Repository = "https://github.com/PierreOlivierBrillant/cs-manim"
 where = ["."]
 include = ["cs_manim*"]
 
+[tool.setuptools.package-data]
+cs_manim = ["py.typed"]
+
 [tool.black]
 line-length = 88
 target-version = ['py310']
