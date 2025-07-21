@@ -4,7 +4,6 @@ from .android_logo import AndroidLogo
 from .apple_logo import AppleLogo
 from .cloud import Cloud
 from .database import Database
-from .http_call import HttpCall
 from .mobile_phone import MobilePhone
 from .monitor import Monitor
 from .portable_computer import PortableComputer
@@ -16,7 +15,6 @@ __all__ = [
     "AppleLogo",
     "Cloud",
     "Database",
-    "HttpCall",
     "Monitor",
     "PortableComputer",
     "Server",

@@ -27,7 +27,6 @@ from cs_manim import (  # noqa: E402
     AppleLogo,
     Cloud,
     Database,
-    HttpCall,
     MobilePhone,
     Monitor,
     PortableComputer,
@@ -125,26 +124,11 @@ def export_object_image(obj, name, output_dir, file_format="png", quality="mediu
 
 def create_objects():
     """Create all available objects with different configurations."""
-    # Create HttpCall with a comprehensive example showing all features
-    http_call_example = HttpCall(
-        method="POST",
-        url="/api/users",
-        http_version="HTTP/1.1",
-        headers={
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-            "Authorization": "Bearer token123",
-        },
-        body='{"name" : "John Doe", "email": "john@example.com", "age": 30}',
-        body_language="json",
-    )
-
     objects = [
         (AndroidLogo(), "android_logo"),
         (AppleLogo(), "apple_logo"),
         (Cloud(), "cloud"),
         (Database(), "database"),
-        (http_call_example, "http_call"),
         (Monitor(), "monitor"),
         (PortableComputer(), "portable_computer"),
         (Server(), "server"),

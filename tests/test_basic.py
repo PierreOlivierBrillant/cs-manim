@@ -15,7 +15,6 @@ def test_objects_import():
         AndroidLogo,
         AppleLogo,
         Database,
-        HttpCall,
         MobilePhone,
         Monitor,
         PortableComputer,
@@ -27,7 +26,6 @@ def test_objects_import():
     assert AndroidLogo is not None
     assert AppleLogo is not None
     assert Database is not None
-    assert HttpCall is not None
     assert Monitor is not None
     assert PortableComputer is not None
     assert Server is not None
@@ -61,7 +59,6 @@ def test_public_api():
     assert hasattr(cs_manim, "AndroidLogo")
     assert hasattr(cs_manim, "AppleLogo")
     assert hasattr(cs_manim, "Database")
-    assert hasattr(cs_manim, "HttpCall")
     assert hasattr(cs_manim, "Monitor")
     assert hasattr(cs_manim, "PortableComputer")
     assert hasattr(cs_manim, "Server")

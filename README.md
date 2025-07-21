@@ -16,7 +16,7 @@ pip install cs-manim
 
 ```python
 from manim import *
-from cs_manim import Computer, Server, MobilePhone, HttpCall
+from cs_manim import Computer, Server, MobilePhone
 from cs_manim import CLIENT_COLOR, SERVER_COLOR, FONT_NAME
 
 class MyScene(Scene):
@@ -25,7 +25,6 @@ class MyScene(Scene):
         computer = Computer("PC Client")
         server = Server("API Server")
         mobile = MobilePhone("Smartphone")
-        api_call = HttpCall("POST", "/api/users")
 
         # Position and animate
         computer.shift(LEFT * 3)
@@ -61,12 +60,6 @@ server = Server(name="My Server", color=SERVER_COLOR)
 
 ```python
 mobile = MobilePhone(name="My Phone", color=PURPLE)
-```
-
-### HttpCall
-
-```python
-http_call = HttpCall(method="POST", url="/api/users", color=ORANGE)
 ```
 
 ### AndroidLogo
