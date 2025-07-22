@@ -4,13 +4,13 @@ Example usage of the cs-manim library
 
 from manim import DOWN, LEFT, RIGHT, Arrow, Create, Scene
 
-from cs_manim import CLIENT_COLOR, SERVER_COLOR, Computer, MobilePhone, Server
+from cs_manim import PortableComputer, MobilePhone, Server
 
 
 class BasicExample(Scene):
     def construct(self):
         # Create objects
-        computer = Computer("PC Client")
+        computer = PortableComputer("PC Client")
         server = Server("API Server")
         mobile = MobilePhone("Smartphone")
 
@@ -25,8 +25,8 @@ class BasicExample(Scene):
         self.play(Create(mobile))
 
         # Communication animation
-        arrow1 = Arrow(computer.get_right(), server.get_left(), color=CLIENT_COLOR)
-        arrow2 = Arrow(server.get_left(), computer.get_right(), color=SERVER_COLOR)
+        arrow1 = Arrow(computer.get_right(), server.get_left())
+        arrow2 = Arrow(server.get_left(), computer.get_right())
 
         self.play(Create(arrow1))
         self.wait(0.5)

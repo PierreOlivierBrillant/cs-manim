@@ -27,17 +27,16 @@ class Database(VGroup):
         Returns:
             VGroup: The group of objects representing the database
         """
-        DISK_WIDTH = 0.8
-        DISK_HEIGHT = 0.2
+        DISK_WIDTH = 3
+        DISK_HEIGHT = 0.75
 
         def create_arc():
-            return (
-                Arc(radius=DISK_WIDTH / 2, start_angle=PI, angle=PI, color=color)
-                .stretch(DISK_HEIGHT / DISK_WIDTH, 1)
-                .shift(UP * 0.83 * (DISK_HEIGHT * 3) / 2)
-            )
+            return Arc(
+                radius=DISK_WIDTH / 2, start_angle=PI, angle=PI, color=color
+            ).stretch(DISK_HEIGHT / DISK_WIDTH, 1)
+            # .shift(UP * 0.83 * (DISK_HEIGHT * 3) / 2)
 
-        top_disk_top = Ellipse(
+        top_disk = Ellipse(
             width=DISK_WIDTH,
             height=DISK_HEIGHT,
             color=color,
@@ -81,21 +80,17 @@ class Database(VGroup):
         half_ellipse = Difference(ellipse, mask)
         half_ellipse.set_fill(color, opacity=0.6)
         half_ellipse.set_stroke(color, width=0)
-        half_ellipse.shift(UP * 0.0002)
+        half_ellipse.next_to(mask, DOWN, buff=-0.001)
 
-        top_arc = create_arc()
-        middle_arc = create_arc().shift(
-            DOWN * (DISK_HEIGHT * 3) / 2 - DOWN * (DISK_HEIGHT / 2)
-        )
-        bottom_arc = create_arc().shift(
-            DOWN * (DISK_HEIGHT * 3) / 2 + DOWN * (DISK_HEIGHT / 2) - DOWN * 0.001
-        )
+        top_arc = create_arc().next_to(top_disk, DOWN, buff=DISK_HEIGHT / 2)
+        middle_arc = create_arc().next_to(top_disk, DOWN, buff=DISK_HEIGHT * 1.5)
+        bottom_arc = create_arc().next_to(mask, DOWN, buff=-0.01)
 
-        label = Text(name, font_size=16, color=color, font=FONT_NAME).shift(DOWN * 0.55)
+        label = Text(name, color=color, font=FONT_NAME).next_to(bottom_arc, DOWN)
 
         super().__init__(
             main_body,
-            top_disk_top,
+            top_disk,
             main_body_left_edge,
             main_body_right_edge,
             top_arc,

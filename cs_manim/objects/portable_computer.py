@@ -14,13 +14,18 @@ class PortableComputer(VGroup):
             name: Name of the computer
             color: Color of the client (default BLUE)
         """
-        laptop_keyboard = Rectangle(width=2, height=1.2, color=color, fill_opacity=0.3)
+        WIDTH = 3
+        HEIGHT = 1.8
 
         laptop_screen = Rectangle(
-            width=2.2, height=0.2, color=color, fill_opacity=0.8
-        ).shift(DOWN * 0.7)
+            width=WIDTH, height=HEIGHT, color=color, fill_opacity=0.3
+        )
 
-        label = Text(name, font_size=16, color=color, font=FONT_NAME).shift(DOWN * 1.0)
+        laptop_keyboard = Rectangle(
+            width=WIDTH * 1.1, height=HEIGHT * 0.17, color=color, fill_opacity=0.8
+        ).next_to(laptop_screen, DOWN, buff=0.01)
+
+        label = Text(name, color=color, font=FONT_NAME).next_to(laptop_keyboard, DOWN)
 
         components = [laptop_keyboard, laptop_screen, label]
         if content is not None:

@@ -18,21 +18,27 @@ class Monitor(VGroup):
         Returns:
             VGroup: The group of objects representing the monitor
         """
+
+        WIDTH = 3
+        HEIGHT = 1.92
+
         monitor_frame = Rectangle(
-            width=2.5, height=1.6, color=color, fill_opacity=0.3, stroke_width=3
+            width=WIDTH, height=HEIGHT, color=color, fill_opacity=0.3, stroke_width=3
         )
 
-        monitor_screen = Rectangle(width=2.3, height=1.4, color=color, fill_opacity=0.1)
-
-        stand_base = Rectangle(
-            width=1.0, height=0.1, color=color, fill_opacity=0.5
-        ).shift(DOWN * 1.05)
+        monitor_screen = Rectangle(
+            width=WIDTH * 0.92, height=HEIGHT * 0.875, color=color, fill_opacity=0.1
+        )
 
         stand_pole = Rectangle(
-            width=0.1, height=0.2, color=color, fill_opacity=0.5
-        ).shift(DOWN * 0.9)
+            width=WIDTH * 0.04, height=HEIGHT * 0.125, color=color, fill_opacity=0.5
+        ).next_to(monitor_frame, DOWN, buff=0.01)
 
-        label = Text(name, font_size=16, color=color, font=FONT_NAME).shift(DOWN * 1.3)
+        stand_base = Rectangle(
+            width=0.4 * WIDTH, height=HEIGHT * 0.0625, color=color, fill_opacity=0.5
+        ).next_to(stand_pole, DOWN, buff=0.01)
+
+        label = Text(name, color=color, font=FONT_NAME).next_to(stand_base, DOWN)
 
         components = [monitor_frame, monitor_screen, stand_base, stand_pole, label]
         if content is not None:

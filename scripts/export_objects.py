@@ -12,17 +12,11 @@ Examples:
 """
 
 import argparse
-import sys
 from pathlib import Path
 
 from manim import Scene, config
 
-# Add parent directory to path to import cs_manim
-script_dir = Path(__file__).parent
-project_root = script_dir.parent
-sys.path.insert(0, str(project_root))
-
-from cs_manim import (  # noqa: E402
+from cs_manim import (
     AndroidLogo,
     AppleLogo,
     Cloud,
@@ -44,27 +38,7 @@ class ObjectExportScene(Scene):
         super().__init__(**kwargs)
 
     def construct(self):
-        """Add the object to the scene and scale it to fill the frame."""
-        # Get the object's bounding box
-        obj_width = self.obj.width
-        obj_height = self.obj.height
-
-        # Get the camera frame dimensions
-        frame_width = config.frame_width
-        frame_height = config.frame_height
-
-        # Calculate the scale factor to fill the frame while maintaining aspect ratio
-        # Leave a small margin (0.9) to avoid touching the edges
-        scale_x = (frame_width * 0.9) / obj_width if obj_width > 0 else 1
-        scale_y = (frame_height * 0.9) / obj_height if obj_height > 0 else 1
-        scale_factor = min(scale_x, scale_y)
-
-        # Scale the object to fill the available space
-        self.obj.scale(scale_factor)
-
-        # Center the object
-        self.obj.move_to([0, 0, 0])
-
+        """Add the object to the scene."""
         self.add(self.obj)
 
 

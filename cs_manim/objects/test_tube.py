@@ -13,27 +13,28 @@ class TestTube(VGroup):
         Returns:
             VGroup: The group of objects representing test tube
         """
+        WIDTH = 3.0
+        HEIGHT = 3.0
 
         def create_flask():
             return Polygon(
-                [-0.5, 0, 0],
-                [-0.15, 0.5, 0],
-                [-0.15, 0.9, 0],
-                [-0.2, 1, 0],
-                [0.2, 1, 0],
-                [0.15, 0.9, 0],
-                [0.15, 0.5, 0],
-                [0.5, 0, 0],
+                [WIDTH * -0.5, HEIGHT * -0.5, 0],
+                [WIDTH * -0.15, 0, 0],
+                [WIDTH * -0.15, HEIGHT * 0.4, 0],
+                [WIDTH * -0.2, HEIGHT * 0.5, 0],
+                [WIDTH * 0.2, HEIGHT * 0.5, 0],
+                [WIDTH * 0.15, HEIGHT * 0.4, 0],
+                [WIDTH * 0.15, 0, 0],
+                [WIDTH * 0.5, HEIGHT * -0.5, 0],
                 fill_color=color,
                 fill_opacity=0,
-                stroke_width=8,
                 stroke_color=color,
-            ).round_corners(0.05)
+            ).round_corners(WIDTH * 0.05)
 
         mask = (
-            Rectangle(width=1.0, height=1.0, fill_color=color)
-            .set_stroke(color, width=1)
-            .shift(UP * 0.9)
+            Rectangle(width=WIDTH, height=HEIGHT, fill_color=color)
+            .set_stroke(color, width=WIDTH)
+            .shift(UP * (HEIGHT * 0.4))
         )
 
         flask_content = (
