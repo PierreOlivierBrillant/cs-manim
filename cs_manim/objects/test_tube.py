@@ -13,8 +13,8 @@ class TestTube(VGroup):
         Returns:
             VGroup: The group of objects representing test tube
         """
-        WIDTH = 3.0
-        HEIGHT = 3.0
+        WIDTH = 2
+        HEIGHT = 2
 
         def create_flask():
             return Polygon(

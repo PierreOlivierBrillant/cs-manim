@@ -27,14 +27,13 @@ class Database(VGroup):
         Returns:
             VGroup: The group of objects representing the database
         """
-        DISK_WIDTH = 3
-        DISK_HEIGHT = 0.75
+        DISK_WIDTH = 2
+        DISK_HEIGHT = 0.5
 
         def create_arc():
             return Arc(
                 radius=DISK_WIDTH / 2, start_angle=PI, angle=PI, color=color
             ).stretch(DISK_HEIGHT / DISK_WIDTH, 1)
-            # .shift(UP * 0.83 * (DISK_HEIGHT * 3) / 2)
 
         top_disk = Ellipse(
             width=DISK_WIDTH,

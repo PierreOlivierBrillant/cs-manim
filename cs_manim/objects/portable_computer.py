@@ -14,8 +14,8 @@ class PortableComputer(VGroup):
             name: Name of the computer
             color: Color of the client (default BLUE)
         """
-        WIDTH = 3
-        HEIGHT = 1.8
+        WIDTH = 2
+        HEIGHT = 1.2
 
         laptop_screen = Rectangle(
             width=WIDTH, height=HEIGHT, color=color, fill_opacity=0.3

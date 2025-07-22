@@ -1,5 +1,7 @@
 from manim import BLUE, DOWN, SVGMobject, Text, VGroup
 
+from cs_manim.style import FONT_NAME
+
 
 class Cloud(VGroup):
     def __init__(
@@ -17,13 +19,15 @@ class Cloud(VGroup):
         Returns:
             VGroup: The group of objects representing the cloud
         """
-        cloud = (
-            SVGMobject("cs_manim/svg/cloud.svg")
-            .set_fill(color, opacity=0.3)
-            .set_stroke(color, width=7)
+        cloud = SVGMobject(
+            "cs_manim/svg/cloud.svg",
+            fill_color=color,
+            fill_opacity=0.3,
+            stroke_color=color,
+            stroke_width=4,
         )
 
-        cloud_text = Text(text, font_size=24, color=color).shift(DOWN * 0.2)
+        cloud_text = Text(text, color=color, font=FONT_NAME).next_to(cloud, DOWN)
 
         cloud_group = VGroup(cloud, cloud_text)
 

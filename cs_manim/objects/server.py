@@ -20,8 +20,8 @@ class Server(VGroup):
             VGroup: The group of objects representing the server
         """
 
-        WIDTH = 3
-        HEIGHT = 3.75
+        WIDTH = 1.6
+        HEIGHT = 2
         LIGHT_RADIUS = 0.03 * WIDTH
 
         def create_light():

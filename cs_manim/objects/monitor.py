@@ -19,8 +19,8 @@ class Monitor(VGroup):
             VGroup: The group of objects representing the monitor
         """
 
-        WIDTH = 3
-        HEIGHT = 1.92
+        WIDTH = 2
+        HEIGHT = 1.28
 
         monitor_frame = Rectangle(
             width=WIDTH, height=HEIGHT, color=color, fill_opacity=0.3, stroke_width=3

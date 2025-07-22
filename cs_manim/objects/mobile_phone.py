@@ -17,8 +17,8 @@ class MobilePhone(VGroup):
             VGroup: The group of objects representing the mobile phone
         """
 
-        WIDTH = 1.7
-        HEIGHT = 3
+        WIDTH = 1.13
+        HEIGHT = 2
 
         phone_body = RoundedRectangle(
             width=WIDTH,
