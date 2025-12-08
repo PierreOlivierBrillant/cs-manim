@@ -9,6 +9,7 @@ computer science concepts.
 
 from .objects import (
     AndroidLogo,
+    AngularLogo,
     AppleLogo,
     Cloud,
     Database,
@@ -26,6 +27,7 @@ __email__ = "pierreolivierbrillant@gmail.com"
 
 __all__ = [
     "AndroidLogo",
+    "AngularLogo",
     "AppleLogo",
     "Cloud",
     "Database",

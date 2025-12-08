@@ -1,6 +1,7 @@
 """Reusable objects for scenes"""
 
 from .android_logo import AndroidLogo
+from .angular_logo import AngularLogo
 from .apple_logo import AppleLogo
 from .cloud import Cloud
 from .database import Database
@@ -12,6 +13,7 @@ from .test_tube import TestTube
 
 __all__ = [
     "AndroidLogo",
+    "AngularLogo",
     "AppleLogo",
     "Cloud",
     "Database",

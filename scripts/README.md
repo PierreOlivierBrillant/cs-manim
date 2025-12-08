@@ -55,4 +55,5 @@ The script automatically generates an image for each object:
 #### Logos
 
 - Android Logo
+- Angular Logo
 - Apple Logo

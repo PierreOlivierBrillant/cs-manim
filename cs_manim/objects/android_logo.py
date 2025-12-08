@@ -1,7 +1,9 @@
-from manim import SVGMobject, VGroup
+from manim import SVGMobject
+
+from cs_manim.objects.base_object import BaseObject
 
 
-class AndroidLogo(VGroup):
+class AndroidLogo(BaseObject):
     def __init__(self):
         """
         Create an Android logo

@@ -1,9 +1,11 @@
 from manim import DOWN, PURPLE, Mobject, RoundedRectangle, Text, VGroup
 
+from cs_manim.objects.base_object import BaseObject
+
 from ..style import FONT_NAME
 
 
-class MobilePhone(VGroup):
+class MobilePhone(BaseObject):
     def __init__(self, name="Mobile", color=PURPLE, content: Mobject | None = None):
         """
         Create a mobile phone
@@ -34,10 +36,14 @@ class MobilePhone(VGroup):
             fill_opacity=0.1,
             corner_radius=0.01,
         )
-        label = Text(name, color=color, font=FONT_NAME).next_to(phone_body, DOWN)
 
-        components = [phone_body, phone_screen, label]
+        components = [phone_body, phone_screen]
         if content is not None:
             components.append(content)
 
-        super().__init__(*components)
+        self.object = VGroup(*components)
+
+        super().__init__(
+            self.object,
+            Text(name, color=color, font=FONT_NAME).next_to(self.object, DOWN),
+        )

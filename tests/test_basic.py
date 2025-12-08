@@ -13,6 +13,7 @@ def test_objects_import():
     """Test that the main objects can be imported."""
     from cs_manim.objects import (
         AndroidLogo,
+        AngularLogo,
         AppleLogo,
         Database,
         MobilePhone,
@@ -24,6 +25,7 @@ def test_objects_import():
 
     # Verify that the classes exist
     assert AndroidLogo is not None
+    assert AngularLogo is not None
     assert AppleLogo is not None
     assert Database is not None
     assert Monitor is not None
@@ -57,6 +59,7 @@ def test_public_api():
 
     # Verify that the main objects are accessible
     assert hasattr(cs_manim, "AndroidLogo")
+    assert hasattr(cs_manim, "AngularLogo")
     assert hasattr(cs_manim, "AppleLogo")
     assert hasattr(cs_manim, "Database")
     assert hasattr(cs_manim, "Monitor")

@@ -74,6 +74,12 @@ android = AndroidLogo(color=GREEN)
 apple = AppleLogo(color=WHITE)
 ```
 
+### AngularLogo
+
+```python
+angular = AngularLogo(color=WHITE)
+```
+
 ### Database
 
 ```python

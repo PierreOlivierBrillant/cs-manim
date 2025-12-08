@@ -1,9 +1,11 @@
 from manim import DOWN, Mobject, Rectangle, Text, VGroup
 
+from cs_manim.objects.base_object import BaseObject
+
 from ..style import CLIENT_COLOR, FONT_NAME
 
 
-class PortableComputer(VGroup):
+class PortableComputer(BaseObject):
     def __init__(
         self, name="Computer", color=CLIENT_COLOR, content: Mobject | None = None
     ):
@@ -25,10 +27,13 @@ class PortableComputer(VGroup):
             width=WIDTH * 1.1, height=HEIGHT * 0.17, color=color, fill_opacity=0.8
         ).next_to(laptop_screen, DOWN, buff=0.01)
 
-        label = Text(name, color=color, font=FONT_NAME).next_to(laptop_keyboard, DOWN)
-
-        components = [laptop_keyboard, laptop_screen, label]
+        components = [laptop_keyboard, laptop_screen]
         if content is not None:
             components.append(content)
 
-        super().__init__(components)
+        self.object = VGroup(*components)
+
+        super().__init__(
+            self.object,
+            Text(name, color=color, font=FONT_NAME).next_to(self.object, DOWN),
+        )

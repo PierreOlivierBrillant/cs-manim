@@ -1,7 +1,9 @@
 from manim import RED, UP, Difference, Polygon, Rectangle, VGroup
 
+from cs_manim.objects.base_object import BaseObject
 
-class TestTube(VGroup):
+
+class TestTube(BaseObject):
     def __init__(self, name="Tests", color=RED):
         """
         Create a test tube to represent tests
@@ -44,4 +46,9 @@ class TestTube(VGroup):
             .set_stroke(color, width=0)
         )
 
-        super().__init__(create_flask(), flask_content)
+        self.object = VGroup(
+            create_flask(),
+            flask_content,
+        )
+
+        super().__init__(self.object)

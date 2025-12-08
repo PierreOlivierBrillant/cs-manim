@@ -1,9 +1,10 @@
 from manim import BLUE, DOWN, SVGMobject, Text, VGroup
 
+from cs_manim.objects.base_object import BaseObject
 from cs_manim.style import FONT_NAME
 
 
-class Cloud(VGroup):
+class Cloud(BaseObject):
     def __init__(
         self,
         text="Cloud",
@@ -27,8 +28,9 @@ class Cloud(VGroup):
             stroke_width=4,
         )
 
-        cloud_text = Text(text, color=color, font=FONT_NAME).next_to(cloud, DOWN)
+        self.object = VGroup(cloud)
 
-        cloud_group = VGroup(cloud, cloud_text)
-
-        super().__init__(cloud_group)
+        super().__init__(
+            self.object,
+            Text(text, color=color, font=FONT_NAME).next_to(self.object, DOWN),
+        )

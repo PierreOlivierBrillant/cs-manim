@@ -1,9 +1,11 @@
 from manim import BLUE, DOWN, LEFT, RIGHT, UP, Circle, Rectangle, Text, VGroup
 
+from cs_manim.objects.base_object import BaseObject
+
 from ..style import FONT_NAME
 
 
-class Server(VGroup):
+class Server(BaseObject):
     def __init__(
         self,
         name="Server",
@@ -57,7 +59,7 @@ class Server(VGroup):
             fill_opacity=0.3,
         )
 
-        return super().__init__(
+        self.object = VGroup(
             main_case,
             # Top rack
             create_rack().shift(UP * (HEIGHT * 0.36)),
@@ -67,5 +69,9 @@ class Server(VGroup):
             # Bottom rack
             create_rack().shift(DOWN * (HEIGHT * 0.36)),
             # Server name
-            Text(name, color=color, font=FONT_NAME).next_to(main_case, DOWN),
+        )
+
+        return super().__init__(
+            self.object,
+            Text(name, color=color, font=FONT_NAME).next_to(self.object, DOWN),
         )

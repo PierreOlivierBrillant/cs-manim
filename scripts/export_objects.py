@@ -18,6 +18,7 @@ from manim import Scene, config
 
 from cs_manim import (
     AndroidLogo,
+    AngularLogo,
     AppleLogo,
     Cloud,
     Database,
@@ -100,13 +101,14 @@ def create_objects():
     """Create all available objects with different configurations."""
     objects = [
         (AndroidLogo(), "android_logo"),
+        (AngularLogo(), "angular_logo"),
         (AppleLogo(), "apple_logo"),
         (Cloud(), "cloud"),
         (Database(), "database"),
         (Monitor(), "monitor"),
         (PortableComputer(), "portable_computer"),
         (Server(), "server"),
-        (MobilePhone(), "mobile_phone"),
+        (MobilePhone(content=AngularLogo()), "mobile_phone"),
         (TestTube(), "test_tube"),
     ]
 

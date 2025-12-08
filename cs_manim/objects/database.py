@@ -12,10 +12,12 @@ from manim import (
     VGroup,
 )
 
+from cs_manim.objects.base_object import BaseObject
+
 from ..style import FONT_NAME
 
 
-class Database(VGroup):
+class Database(BaseObject):
     def __init__(self, name="Database", color=BLUE):
         """
         Create a database with 3 stacked disks
@@ -85,16 +87,18 @@ class Database(VGroup):
         middle_arc = create_arc().next_to(top_disk, DOWN, buff=DISK_HEIGHT * 1.5)
         bottom_arc = create_arc().next_to(mask, DOWN, buff=-0.01)
 
-        label = Text(name, color=color, font=FONT_NAME).next_to(bottom_arc, DOWN)
-
-        super().__init__(
-            main_body,
+        self.object = VGroup(
             top_disk,
+            main_body,
             main_body_left_edge,
             main_body_right_edge,
             top_arc,
             middle_arc,
             bottom_arc,
             half_ellipse,
-            label,
+        )
+
+        super().__init__(
+            self.object,
+            Text(name, color=color, font=FONT_NAME).next_to(self.object, DOWN),
         )

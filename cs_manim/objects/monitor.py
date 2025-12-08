@@ -1,9 +1,11 @@
 from manim import DOWN, Mobject, Rectangle, Text, VGroup
 
+from cs_manim.objects.base_object import BaseObject
+
 from ..style import CLIENT_COLOR, FONT_NAME
 
 
-class Monitor(VGroup):
+class Monitor(BaseObject):
     def __init__(
         self, name="Monitor", color=CLIENT_COLOR, content: Mobject | None = None
     ):
@@ -38,10 +40,13 @@ class Monitor(VGroup):
             width=0.4 * WIDTH, height=HEIGHT * 0.0625, color=color, fill_opacity=0.5
         ).next_to(stand_pole, DOWN, buff=0.01)
 
-        label = Text(name, color=color, font=FONT_NAME).next_to(stand_base, DOWN)
-
-        components = [monitor_frame, monitor_screen, stand_base, stand_pole, label]
+        components = [monitor_frame, monitor_screen, stand_base, stand_pole]
         if content is not None:
             components.append(content)
 
-        super().__init__(*components)
+        self.object = VGroup(*components)
+
+        super().__init__(
+            self.object,
+            Text(name, color=color, font=FONT_NAME).next_to(self.object, DOWN),
+        )
